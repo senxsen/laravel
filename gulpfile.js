@@ -16,28 +16,55 @@ var gulp           = require('gulp'),
     gulpCSSMin     = require('gulp-cssmin'),
     gulpCompass    = require('gulp-compass');
 
-// require('laravel-elixir-vue');
+require('laravel-elixir-vue');
 
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
  |--------------------------------------------------------------------------
- |
+ |gulp.task('default', function () {
+ //    // elixir(function(mix) {
+ //    //    mix.sass('app.scss')
+ //    //        .webpack('app.js');
+ //    // });
+ //
+ // });
  | Elixir provides a clean, fluent API for defining some basic Gulp tasks
  | for your Laravel application. By default, we are compiling the Sass
  | file for our application, as well as publishing vendor resources.
  |
  */
 
-gulp.task('test', function(){
-   gulp.src('resources/assets/sass/app.scss')
-       .pipe(gulpUglify)
-       .pipe(gulp.dest('public/css/app.css'));
+// Laravel Elixir
+// 一般 : gulp
+// 壓縮 : gulp --production
+
+elixir(function(mix) {
+    mix.sass('app.scss')
+        .webpack('app.js');
+    mix.version([
+        'css/app.css',
+        'js/app.js'
+    ]);
 });
 
-// elixir(mix => {
-//     mix.sass('app.scss')
-//        .webpack('app.js');
-// });
+// Gulp 方式
+// css : gulp css
+
+var sassPath = './resources/assets/sass/',
+    cssPublicPath = './public/css/',
+    jsPublicPath = './public/js/';
+
+gulp.task('css', function(){
+   gulp.src(sassPath + 'app.scss')
+       .pipe(gulpSass())
+       .pipe(gulpCSSMin())
+       .pipe(gulp.dest(cssPublicPath))
+       .pipe(gulpNotify('sass整合與壓縮css已完成!'));
+});
+
+
+
+
 
 
