@@ -11,6 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+
+//    return dd(Session::all());
+//      return view('welcome');
+//});//use function to call welcome or you can use another way as below
+Route::get('/', "User\AuthController@login")->name('login');
+Route::post('login', 'User\AuthController@loginPost')->name('login_post');
+
+Route::get('/about', "PagesController@about");
+Route::get('/contact', "PagesController@contact");
+
+//// Authentication Routes...
+//Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+//Route::post('login', 'Auth\LoginController@login');
+//Route::post('logout', 'Auth\LoginController@logout');
+//
+//// Registration Routes...
+//Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+//Route::post('register', 'Auth\RegisterController@register');
+//
+//// Password Reset Routes...
+//Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+//Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+//Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+//Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+Route::group(['before' => 'auth'], function () {
+
 });

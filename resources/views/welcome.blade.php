@@ -72,6 +72,12 @@
                     <a href="{{ url('/register') }}">Register</a>
                 </div>
             @endif
+            <ul>
+                {{--@foreach($posts as $post)--}}
+                    {{--<li>{{ $post }}</li>--}}
+                {{--@endforeach--}}
+            </ul>
+
 
             <div class="content">
                 <div class="title m-b-md">
