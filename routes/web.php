@@ -18,9 +18,9 @@
 //});//use function to call welcome or you can use another way as below
 Route::get('/', "User\AuthController@login")->name('login');
 Route::post('login', 'User\AuthController@loginPost')->name('login_post');
+Route::get('register', "User\AuthController@register")->name('register');
+Route::post('register', 'User\AuthController@registerPost')->name('register_post');
 
-Route::get('/about', "PagesController@about");
-Route::get('/contact', "PagesController@contact");
 
 //// Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -37,6 +37,6 @@ Route::get('/contact', "PagesController@contact");
 //Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::group(['before' => 'auth'], function () {
-
+Route::group(['middleware' => 'auth.user'], function () {
+    Route::get('/dashboard', 'Auth\AuthController@dashboard')->name('dashboard');
 });

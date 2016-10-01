@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh_TW',
 
     /*
     |--------------------------------------------------------------------------
@@ -227,8 +227,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
 
-        'UserAuth' => \App\Shuanglong\User\Services\AuthService::class,
-        'ManagerAuth' => \App\Shuanglong\Manager\Services\AuthService::class,
+        'UserAuth' => \App\Shuanglong\User\Supports\AuthSupport::class,
+        'ManagerAuth' => \App\Shuanglong\Manager\Supports\AuthSupport::class,
 
     ],
 

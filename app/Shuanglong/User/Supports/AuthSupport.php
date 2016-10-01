@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Shuanglong\Manager\Services;
+namespace App\Shuanglong\User\Supports;
 
 use Session;
 
-class AuthService
+class AuthSupport
 {
     protected $user;
 
