@@ -10,16 +10,16 @@
             <p>Create account to see it in action.</p>
             {!! Form::open(['route' => 'register_post', 'method' => 'post', "class" => 'm-t']) !!}
                 <div class="form-group">
-                    <input name="full_name" type="text" class="form-control" placeholder="Full Name" required="">
+                    <input name="full_name" type="text" class="form-control" placeholder="Full Name" required="" value="{{ old("full_name") }}">
                 </div>
                 <div class="form-group">
-                    <input name="nickname" type="text" class="form-control" placeholder="Nick Name" required="">
+                    <input name="nickname" type="text" class="form-control" placeholder="Nick Name" required="" value="{{ old("nickname") }}">
                 </div>
                 <div class="form-group">
-                    <input name="mobile" type="text" class="form-control" placeholder="Mobile Number" required="">
+                    <input name="mobile" type="text" class="form-control" placeholder="Mobile Number" required="" value="{{ old("mobile") }}">
                 </div>
                 <div class="form-group">
-                    <input name="email" type="email" class="form-control" placeholder="Email" required="">
+                    <input name="email" type="email" class="form-control" placeholder="Email" required="" value="{{ old("email") }}">
                 </div>
                 <div class="form-group">
                     <input name="password" type="password" class="form-control" placeholder="Password" required="">
@@ -30,15 +30,8 @@
                 <div class="form-group">
                     <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
                 </div>
-                @if( Session::has('error') )<!--不懂-->
-                    <div class="alert alert-danger">
-                        <ul>
-                        @foreach( Session::get('error') as $value)
-                            <li>{{ $value }}</li>
-                        @endforeach
-                        </ul>
-                    </div>
-                @endif
+                {{-- include 錯誤樣板 --}}
+                @include('layouts.validatorError')
                 <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
                 <p class="text-muted text-center"><small>Already have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" href="{{ route("login") }}">Login</a>
