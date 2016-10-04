@@ -12,9 +12,4 @@ class AuthController extends Controller
     {
         parent::__construct();
     }
-
-    public function dashboard()
-    {
-        return 'dashboard';
-    }
 }

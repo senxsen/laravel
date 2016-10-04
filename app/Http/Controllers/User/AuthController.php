@@ -23,6 +23,10 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+
+    /**
+     * @return string
+     */
     // 接 POST FORM
     public function loginPost(Request $request)
     {

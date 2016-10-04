@@ -20,7 +20,7 @@ Route::get('/', "User\AuthController@login")->name('login');
 Route::post('login', 'User\AuthController@loginPost')->name('login_post');
 Route::get('register', "User\AuthController@register")->name('register');
 Route::post('register', 'User\AuthController@registerPost')->name('register_post');
-
+Route::get('/dashboard', 'Auth\DashboardController@dashboard')->name('dashboard');
 
 //// Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -38,5 +38,5 @@ Route::post('register', 'User\AuthController@registerPost')->name('register_post
 //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::group(['middleware' => 'auth.user'], function () {
-    Route::get('/dashboard', 'Auth\AuthController@dashboard')->name('dashboard');
+    Route::get('/dashboard', 'Auth\DashboardController@dashboard')->name('dashboard');
 });
