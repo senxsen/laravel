@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <div>
-            <h1 class="logo-name">時空</h1>
+            <h1 class="logo-name">{{ trans("layout.app_name") }}</h1>
         </div>
         <h3>Welcome to </br> Times Marketing Co., Ltd.</h3>
         <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.

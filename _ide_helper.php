@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.10 on 2016-09-27.
+ * Generated for Laravel 5.3.10 on 2016-10-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12695,12 +12695,12 @@ namespace {
     }
 
 
-    class UserAuth extends \App\Shuanglong\User\Services\AuthService{
+    class UserAuth extends \App\Shuanglong\User\Supports\AuthSupport{
         
     }
 
 
-    class ManagerAuth extends \App\Shuanglong\Manager\Services\AuthService{
+    class ManagerAuth extends \App\Shuanglong\Manager\Supports\AuthSupport{
         
     }
 

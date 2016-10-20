@@ -77,7 +77,7 @@ class AuthController extends Controller
             'full_name' => "max:50|required",
             'nickname'  => "max:20|required",
             'email'     => "email|max:255|required|unique:users",
-            'mobile'    => "integer|required|unique:users",
+            'mobile'    => "required|unique:users",
             'password'  => "max:255|required",
             'password_confirmation' => "same:password",
             'status'    => "Y",                                     // 允許

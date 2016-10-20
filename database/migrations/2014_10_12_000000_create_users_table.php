@@ -18,18 +18,18 @@ class CreateUsersTable extends Migration
             $table->string('nickname', 20);      // 帳號名稱
             $table->string('full_name', 50);         // 全名
 
-            $table->string('email')->unique();
-            $table->string('mobile')->unique();
+            $table->string('email')->unique();  // mail
+            $table->string('mobile')->unique(); // 手機
 
-            $table->string('password');
+            $table->string('password');  // 一級密碼
             $table->rememberToken();    // 讓使用者紀錄是否勾選記住帳號
-            $table->string('second_password')->nullable();
+            $table->string('second_password')->nullable();    // 二級密碼
 
             $table->integer('set_point')->default(0);         // 本金
             $table->integer('daily_point')->default(0);       // 每日0.6%的分紅，只到200%
-            $table->integer('game_point')->default(0);        //
-            $table->integer('house_point')->default(0);       //
-            $table->integer('travel_point')->default(0);      //
+            $table->integer('game_point')->default(0);        // UC8輸贏點數
+            $table->integer('house_point')->default(0);       // 房產點數
+            $table->integer('travel_point')->default(0);      // 旅遊點數
             $table->integer('cash')->default(0);             // 可提領之現金
 
             $table->string('type', 1)->default("B");      // 會員類型，A為股東、B為一般
