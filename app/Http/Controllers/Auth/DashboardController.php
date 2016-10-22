@@ -31,54 +31,11 @@ class DashboardController extends Controller
         return view('auth.dashboard', $binding);
     }
 
-    public function points()
-    {
-        // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
-
-        $binding = [
-            'user' => $User,
-        ];
-        return view('auth.points', $binding);
-    }
-
     public function realname()
     {
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
-
         $binding = [
             'user' => $User,
         ];
@@ -90,8 +47,6 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-
-
         $binding = [
             'user' => $User,
         ];
@@ -103,22 +58,6 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-//        switch($User->set_point)
-//        {
-//            case 1000:
-//                $User->level = '福龍';
-//                break;
-//            case 3000:
-//                $User->level = '翔龍';
-//                break;
-//            case 5000:
-//                $User->level = '銀龍';
-//                break;
-//            case 10000:
-//                $User->level = '金龍';
-//                break;
-//        }
-
         $binding = [
             'user' => $User,
         ];
@@ -130,25 +69,64 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-//        switch($User->set_point)
-//        {
-//            case 1000:
-//                $User->level = '福龍';
-//                break;
-//            case 3000:
-//                $User->level = '翔龍';
-//                break;
-//            case 5000:
-//                $User->level = '銀龍';
-//                break;
-//            case 10000:
-//                $User->level = '金龍';
-//                break;
-//        }
-
         $binding = [
             'user' => $User,
         ];
         return view('auth.editmemberinfo', $binding);
+    }
+
+    public function pointexchange()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.pointexchange', $binding);
+    }
+
+    public function pointtransfer()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.pointtransfer', $binding);
+    }
+
+    public function pointpurchase()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.pointpurchase', $binding);
+    }
+
+    public function sponsorlist()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.sponsorlist', $binding);
+    }
+
+    public function listmap()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.listmap', $binding);
     }
 }

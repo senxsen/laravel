@@ -105,7 +105,7 @@ class AuthController extends Controller
             }
             // 新增一個使用者
             $User = new User();
-            $User->id           = RandomStringSupports::generateWithPrefix("USR", 20);
+            $User->id           = RandomStringSupports::generate(8, '1234567890');
             $User->full_name    = $inputs['full_name'];
             $User->nickname     = $inputs['nickname'];
             $User->email        = $inputs['email'];

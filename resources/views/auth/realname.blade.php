@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-
+<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
 @section("css")
 
 @endsection
@@ -14,16 +14,16 @@
                         <h5>{{ trans("master.member") }} {{ $user->id }} <small> {{ trans("master.real_name") }}</small></h5>
 
                     </div>
-                    <div class="ibox-content">
+                    <div class="ibox-content">{{--證件驗證資料--}}
                         <form method="get" class="form-horizontal">
                             {{--輸入英文姓--}}
-                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.eng_first_name") }}</label>
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.eng_last_name") }}</label>
 
                                 <div class="col-sm-10"><input type="text" placeholder={{ trans("master.plz_passport_ref") }} class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             {{--輸入英文名--}}
-                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.eng_last_name") }}</label>
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.eng_first_name") }}</label>
 
                                 <div class="col-sm-10"><input type="text" placeholder={{ trans("master.plz_passport_ref") }} class="form-control"></div>
                             </div>
@@ -36,11 +36,12 @@
                             <div class="hr-line-dashed"></div>
                             {{--選擇生日--}}
                             <div class="form-group" id="data_2">
-                                <label class="font-noraml">{{ trans("master.birth") }}</label>
-                                <div class="input-group date">
+                                <label class="col-sm-2 control-label ">{{ trans("master.birth") }}</label>
+                                <div class="input-group date col-sm-10">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="10/10/1950">
                                 </div>
                             </div>
+                            <div class="hr-line-dashed"></div>
                             {{--選擇國籍--}}
                             <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.country") }}</label>
                                 <div class="col-sm-10">
@@ -54,7 +55,11 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             {{--上傳證件--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.passport_id_upload") }}</label>
 
+                                <div class="col-sm-10"><input type="text" placeholder="" class="form-control"></div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
                             {{--輸入證件號碼--}}
                             <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.passport_no_or_id_no") }}</label>
 
@@ -62,208 +67,62 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             {{--輸入手機--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.mobile_number") }}</label>
 
+                                <div class="col-sm-10"><input type="text" placeholder={{ trans("master.plz_enter_real_mobile_no") }} class="form-control"></div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
                             {{--輸入電子郵件--}}
                             <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.email") }}</label>
 
                                 <div class="col-sm-10"><input type="text" placeholder={{ trans("master.plz_enter_real_email") }} class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
+                        </form>
+                    </div>
+                    <div class="ibox-title">
+                        <h5>{{ trans("master.member") }} {{ $user->id }} <small> {{ trans("master.real_bank") }}</small></h5>
 
-
-
-                                <div class="col-lg-10"><input type="text" disabled="" placeholder="Disabled input here..." class="form-control"></div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-lg-2 control-label">Static control</label>
-
-                                <div class="col-lg-10"><p class="form-control-static">email@example.com</p></div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Checkboxes and radios <br>
-                                    <small class="text-navy">Normal Bootstrap elements</small></label>
-
+                    </div>
+                    <div class="ibox-content">{{--銀行帳戶資料--}}
+                        <form method="get" class="form-horizontal">
+                            {{--選擇銀行名稱--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.bank_name") }}</label>
                                 <div class="col-sm-10">
-                                    <div><label> <input type="checkbox" value=""> Option one is this and that—be sure to include why it's great </label></div>
-                                    <div><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one is this and that—be sure to
-                                            include why it's great </label></div>
-                                    <div><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two can be something else and selecting it will
-                                            deselect option one </label></div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
-
-                                <div class="col-sm-10"><label class="checkbox-inline"> <input type="checkbox" value="option1" id="inlineCheckbox1"> a </label> <label class="checkbox-inline">
-                                        <input type="checkbox" value="option2" id="inlineCheckbox2"> b </label> <label class="checkbox-inline">
-                                        <input type="checkbox" value="option3" id="inlineCheckbox3"> c </label></div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Checkboxes &amp; radios <br><small class="text-navy">Custom elements</small></label>
-
-                                <div class="col-sm-10">
-                                    <div class="i-checks"><label> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option one </label></div>
-                                    <div class="i-checks"><label> <div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" value="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option two checked </label></div>
-                                    <div class="i-checks"><label> <div class="icheckbox_square-green checked disabled" style="position: relative;"><input type="checkbox" value="" disabled="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option three checked and disabled </label></div>
-                                    <div class="i-checks"><label> <div class="icheckbox_square-green disabled" style="position: relative;"><input type="checkbox" value="" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option four disabled </label></div>
-                                    <div class="i-checks"><label> <div class="iradio_square-green" style="position: relative;"><input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option one </label></div>
-                                    <div class="i-checks"><label> <div class="iradio_square-green checked" style="position: relative;"><input type="radio" checked="" value="option2" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option two checked </label></div>
-                                    <div class="i-checks"><label> <div class="iradio_square-green checked disabled" style="position: relative;"><input type="radio" disabled="" checked="" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option three checked and disabled </label></div>
-                                    <div class="i-checks"><label> <div class="iradio_square-green disabled" style="position: relative;"><input type="radio" disabled="" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> Option four disabled </label></div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
-
-                                <div class="col-sm-10"><label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>a </label>
-                                    <label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> b </label>
-                                    <label class="checkbox-inline i-checks"> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option3" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> c </label></div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Select</label>
-
-                                <div class="col-sm-10"><select class="form-control m-b" name="account">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
+                                    <select class="form-control m-b" name="account">
+                                        <option>{{ trans("master.Taiwan") }}</option>
+                                        <option>{{ trans("master.China") }}</option>
+                                        <option>{{ trans("master.Hongkong") }}</option>
+                                        <option>{{ trans("master.Philippine") }}</option>
                                     </select>
-
-                                    <div class="col-lg-4 m-l-n"><select class="form-control" multiple="">
-                                            <option>option 1</option>
-                                            <option>option 2</option>
-                                            <option>option 3</option>
-                                            <option>option 4</option>
-                                        </select></div>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group has-success"><label class="col-sm-2 control-label">Input with success</label>
+                            {{--輸入分行名稱--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.branch_name") }}</label>
 
-                                <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="" class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group has-warning"><label class="col-sm-2 control-label">Input with warning</label>
+                            {{--輸入帳號名稱--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.account_name") }}</label>
 
-                                <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="" class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group has-error"><label class="col-sm-2 control-label">Input with error</label>
+                            {{--輸入帳號--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.account_number") }}</label>
 
-                                <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                <div class="col-sm-10"><input type="text" placeholder="" class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Control sizing</label>
+                            {{--上傳影本--}}
+                            <div class="form-group"><label class="col-sm-2 control-label">{{ trans("master.account_copy_upload") }}</label>
 
-                                <div class="col-sm-10"><input type="text" placeholder=".input-lg" class="form-control input-lg m-b">
-                                    <input type="text" placeholder="Default input" class="form-control m-b"> <input type="text" placeholder=".input-sm" class="form-control input-sm">
-                                </div>
+                                <div class="col-sm-10"><input type="text" placeholder="" class="form-control"></div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Column sizing</label>
 
-                                <div class="col-sm-10">
-                                    <div class="row">
-                                        <div class="col-md-2"><input type="text" placeholder=".col-md-2" class="form-control"></div>
-                                        <div class="col-md-3"><input type="text" placeholder=".col-md-3" class="form-control"></div>
-                                        <div class="col-md-4"><input type="text" placeholder=".col-md-4" class="form-control"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Input groups</label>
-
-                                <div class="col-sm-10">
-                                    <div class="input-group m-b"><span class="input-group-addon">@</span> <input type="text" placeholder="Username" class="form-control"></div>
-                                    <div class="input-group m-b"><input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
-                                    <div class="input-group m-b"><span class="input-group-addon">$</span> <input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
-                                    <div class="input-group m-b"><span class="input-group-addon"> <input type="checkbox"> </span> <input type="text" class="form-control"></div>
-                                    <div class="input-group"><span class="input-group-addon"> <input type="radio"> </span> <input type="text" class="form-control"></div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Button addons</label>
-
-                                <div class="col-sm-10">
-                                    <div class="input-group m-b"><span class="input-group-btn">
-                                            <button type="button" class="btn btn-primary">Go!</button> </span> <input type="text" class="form-control">
-                                    </div>
-                                    <div class="input-group"><input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">Go!
-                                        </button> </span></div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">With dropdowns</label>
-
-                                <div class="col-sm-10">
-                                    <div class="input-group m-b">
-                                        <div class="input-group-btn">
-                                            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="form_basic.html#">Action</a></li>
-                                                <li><a href="form_basic.html#">Another action</a></li>
-                                                <li><a href="form_basic.html#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="form_basic.html#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                        <input type="text" class="form-control"></div>
-                                    <div class="input-group"><input type="text" class="form-control">
-
-                                        <div class="input-group-btn">
-                                            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="form_basic.html#">Action</a></li>
-                                                <li><a href="form_basic.html#">Another action</a></li>
-                                                <li><a href="form_basic.html#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="form_basic.html#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group"><label class="col-sm-2 control-label">Segmented</label>
-
-                                <div class="col-sm-10">
-                                    <div class="input-group m-b">
-                                        <div class="input-group-btn">
-                                            <button tabindex="-1" class="btn btn-white" type="button">Action</button>
-                                            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="form_basic.html#">Action</a></li>
-                                                <li><a href="form_basic.html#">Another action</a></li>
-                                                <li><a href="form_basic.html#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="form_basic.html#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                        <input type="text" class="form-control"></div>
-                                    <div class="input-group"><input type="text" class="form-control">
-
-                                        <div class="input-group-btn">
-                                            <button tabindex="-1" class="btn btn-white" type="button">Action</button>
-                                            <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="form_basic.html#">Action</a></li>
-                                                <li><a href="form_basic.html#">Another action</a></li>
-                                                <li><a href="form_basic.html#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="form_basic.html#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-white" type="submit">Cancel</button>
-                                    <button class="btn btn-primary" type="submit">Save changes</button>
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -273,6 +132,283 @@
         @include('layouts.footer')
     </div>
 
-
 @endsection
 
+@section("js")
+
+    <script>
+        $(document).ready(function(){
+
+            var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#data_5 .input-daterange').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function(ev) {
+                divStyle.backgroundColor = ev.color.toHex();
+            });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function(start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+
+        });
+        var config = {
+            '.chosen-select'           : {},
+            '.chosen-select-deselect'  : {allow_single_deselect:true},
+            '.chosen-select-no-single' : {disable_search_threshold:10},
+            '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {width:"95%"}
+        }
+        for (var selector in config) {
+            $(selector).chosen(config[selector]);
+        }
+
+        $("#ionrange_1").ionRangeSlider({
+            min: 0,
+            max: 5000,
+            type: 'double',
+            prefix: "$",
+            maxPostfix: "+",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 0.1,
+            postfix: " carats",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_3").ionRangeSlider({
+            min: -50,
+            max: 50,
+            from: 0,
+            postfix: "°",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_4").ionRangeSlider({
+            values: [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ],
+            type: 'single',
+            hasGrid: true
+        });
+
+        $("#ionrange_5").ionRangeSlider({
+            min: 10000,
+            max: 100000,
+            step: 100,
+            postfix: " km",
+            from: 55000,
+            hideMinMax: true,
+            hideFromTo: false
+        });
+
+        $(".dial").knob();
+
+        $("#basic_slider").noUiSlider({
+            start: 40,
+            behaviour: 'tap',
+            connect: 'upper',
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#range_slider").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#drag-fixed").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag-fixed',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+    </script>
+
+@endsection

@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     public function getLevelAttribute()
     {
-        $level = null;
+        $level = null; //沒有設default 就要設null
         switch($this->set_point)
         {
             case 1000:
@@ -57,7 +57,7 @@ class User extends Authenticatable
                 $level = '翔龍';
                 break;
             case 5000:
-                $level = '銀龍';
+                $level = '銀龍' ;
                 break;
             case 10000:
                 $level = '金龍';

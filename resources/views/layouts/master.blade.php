@@ -20,6 +20,34 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+
+    <link href="css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+    <link href="css/plugins/cropper/cropper.min.css" rel="stylesheet">
+
+    <link href="css/plugins/switchery/switchery.css" rel="stylesheet">
+
+    <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+    <link href="css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+    <link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+
+    <link href="css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+
+    <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
+
     @yield("css")
 
 </head>
@@ -554,141 +582,56 @@
 <!-- Toastr -->
 <script src="js/plugins/toastr/toastr.min.js"></script>
 
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-        setTimeout(function() {
-            toastr.options = {
-                closeButton: true,
-                progressBar: true,
-                showMethod: 'slideDown',
-                timeOut: 4000
-            };
-            toastr.success('{{ trans("master.double_dragon").trans("master.system") }}', '{{ trans("master.welcome") }}{{ $user->full_name }}{{ trans("master.login") }}');
+<!-- Chosen -->
+<script src="js/plugins/chosen/chosen.jquery.js"></script>
 
-        }, 1300);
+<!-- JSKnob -->
+<script src="js/plugins/jsKnob/jquery.knob.js"></script>
 
+<!-- Input Mask-->
+<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
-        var data1 = [
-            [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
-        ];
-        var data2 = [
-            [0,1],[1,0],[2,2],[3,0],[4,1],[5,3],[6,1],[7,5],[8,2],[9,3],[10,2],[11,1],[12,0],[13,2],[14,8],[15,0],[16,0]
-        ];
-        $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
-                    data1, data2
-                ],
-                {
-                    series: {
-                        lines: {
-                            show: false,
-                            fill: true
-                        },
-                        splines: {
-                            show: true,
-                            tension: 0.4,
-                            lineWidth: 1,
-                            fill: 0.4
-                        },
-                        points: {
-                            radius: 0,
-                            show: true
-                        },
-                        shadowSize: 2
-                    },
-                    grid: {
-                        hoverable: true,
-                        clickable: true,
-                        tickColor: "#d5d5d5",
-                        borderWidth: 1,
-                        color: '#d5d5d5'
-                    },
-                    colors: ["#1ab394", "#1C84C6"],
-                    xaxis:{
-                    },
-                    yaxis: {
-                        ticks: 4
-                    },
-                    tooltip: false
-                }
-        );
+<!-- Data picker -->
+<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
-        var doughnutData = [
-            {
-                value: 300,
-                color: "#a3e1d4",
-                highlight: "#1ab394",
-                label: "App"
-            },
-            {
-                value: 50,
-                color: "#dedede",
-                highlight: "#1ab394",
-                label: "Software"
-            },
-            {
-                value: 100,
-                color: "#A4CEE8",
-                highlight: "#1ab394",
-                label: "Laptop"
-            }
-        ];
+<!-- NouSlider -->
+<script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
 
-        var doughnutOptions = {
-            segmentShowStroke: true,
-            segmentStrokeColor: "#fff",
-            segmentStrokeWidth: 2,
-            percentageInnerCutout: 45, // This is 0 for Pie charts
-            animationSteps: 100,
-            animationEasing: "easeOutBounce",
-            animateRotate: true,
-            animateScale: false
-        };
+<!-- Switchery -->
+<script src="js/plugins/switchery/switchery.js"></script>
 
-        var ctx = document.getElementById("doughnutChart").getContext("2d");
-        var DoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+<!-- IonRangeSlider -->
+<script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
 
-        var polarData = [
-            {
-                value: 300,
-                color: "#a3e1d4",
-                highlight: "#1ab394",
-                label: "App"
-            },
-            {
-                value: 140,
-                color: "#dedede",
-                highlight: "#1ab394",
-                label: "Software"
-            },
-            {
-                value: 200,
-                color: "#A4CEE8",
-                highlight: "#1ab394",
-                label: "Laptop"
-            }
-        ];
+<!-- iCheck -->
+<script src="js/plugins/iCheck/icheck.min.js"></script>
 
-        var polarOptions = {
-            scaleShowLabelBackdrop: true,
-            scaleBackdropColor: "rgba(255,255,255,0.75)",
-            scaleBeginAtZero: true,
-            scaleBackdropPaddingY: 1,
-            scaleBackdropPaddingX: 1,
-            scaleShowLine: true,
-            segmentShowStroke: true,
-            segmentStrokeColor: "#fff",
-            segmentStrokeWidth: 2,
-            animationSteps: 100,
-            animationEasing: "easeOutBounce",
-            animateRotate: true,
-            animateScale: false
-        };
-        var ctx = document.getElementById("polarChart").getContext("2d");
-        var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
+<!-- MENU -->
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
-    });
-</script>
+<!-- Color picker -->
+<script src="js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+
+<!-- Clock picker -->
+<script src="js/plugins/clockpicker/clockpicker.js"></script>
+
+<!-- Image cropper -->
+<script src="js/plugins/cropper/cropper.min.js"></script>
+
+<!-- Date range use moment.js same as full calendar plugin -->
+<script src="js/plugins/fullcalendar/moment.min.js"></script>
+
+<!-- Date range picker -->
+<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+
+<!-- Select2 -->
+<script src="js/plugins/select2/select2.full.min.js"></script>
+
 
 @yield("js")
 </body>

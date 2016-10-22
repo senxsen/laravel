@@ -24,8 +24,6 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        {{--{{ dd($user, $user->id) }}--}}
-                                        {!! $user->id !!}
                                         <p><h3><strong>會員帳號：{{ $user->id }}</strong></h3></p>
                                         <p><h3><strong>註冊時間：{{ $user->created_at->format("Y/m/d") }}</strong></h3></p>
                                         {{--<p><h3><strong>註冊時間：{{ date_format($user->created_at, 'Y/m/d') }}</strong></h3></p>--}}{{--另一種寫法--}}
@@ -36,21 +34,21 @@
                                     </div>
                                 </div>
 
-                                    {{--<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">--}}
-                                        {{--<div class="full-height-scroll" style="overflow: hidden; width: auto; height: 100%;">--}}
+                                {{--<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">--}}
+                                {{--<div class="full-height-scroll" style="overflow: hidden; width: auto; height: 100%;">--}}
 
-                                            <strong>{{ trans("master.login_track") }}</strong>
+                                <strong>{{ trans("master.login_track") }}</strong>
 
-                                            <ul class="list-group clear-list">
-                                                <li class="list-group-item fist-item">
-                                                    <span class="pull-right"> 192.168.0.1 </span>
-                                                    {{ trans("master.login_ip") }}
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <span class="pull-right"> 192.168.0.2 </span>
-                                                    {{ trans("master.last_login_ip") }}
-                                                </li>
-                                            </ul>
+                                <ul class="list-group clear-list">
+                                    <li class="list-group-item fist-item">
+                                        <span class="pull-right"> 192.168.0.1 </span>
+                                        {{ trans("master.login_ip") }}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="pull-right"> 192.168.0.2 </span>
+                                        {{ trans("master.last_login_ip") }}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -60,7 +58,7 @@
             <div class="col-sm-8">
                 {{--<h2 class="m-l-md">{{ trans("master.welcome") }} {{ $user->full_name }}</h2>--}}
 
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <div class="widget style1">
                         <div class="row">
                             <div class="col-xs-4 text-center">
@@ -69,6 +67,19 @@
                             <div class="col-xs-8 text-right">
                                 <span> {{ trans("master.cash_point") }} </span>
                                 <h2 class="font-bold">$ {{ $user->cash + $user->daily_point }}</h2>{{--現金積分(推薦＋遊戲70%)＋每日分紅--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget style1 lazur-bg">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <i class="fa fa-futbol-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <span> {{ trans("master.happy_point") }} </span>
+                                <h2 class="font-bold">$ NOT YET</h2>
                             </div>
                         </div>
                     </div>
@@ -307,11 +318,144 @@
             </div>
         </div>
 
-
         @include('layouts.footer')
     </div>
 @endsection
 
 @section("js")
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('{{ trans("master.double_dragon").trans("master.system") }}', '{{ trans("master.welcome") }}  {{ $user->full_name }}  {{ trans("master.login") }}');
+
+            }, 1300);
+
+
+            var data1 = [
+                [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
+            ];
+            var data2 = [
+                [0,1],[1,0],[2,2],[3,0],[4,1],[5,3],[6,1],[7,5],[8,2],[9,3],[10,2],[11,1],[12,0],[13,2],[14,8],[15,0],[16,0]
+            ];
+            $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
+                        data1, data2
+                    ],
+                    {
+                        series: {
+                            lines: {
+                                show: false,
+                                fill: true
+                            },
+                            splines: {
+                                show: true,
+                                tension: 0.4,
+                                lineWidth: 1,
+                                fill: 0.4
+                            },
+                            points: {
+                                radius: 0,
+                                show: true
+                            },
+                            shadowSize: 2
+                        },
+                        grid: {
+                            hoverable: true,
+                            clickable: true,
+                            tickColor: "#d5d5d5",
+                            borderWidth: 1,
+                            color: '#d5d5d5'
+                        },
+                        colors: ["#1ab394", "#1C84C6"],
+                        xaxis:{
+                        },
+                        yaxis: {
+                            ticks: 4
+                        },
+                        tooltip: false
+                    }
+            );
+
+            var doughnutData = [
+                {
+                    value: 300,
+                    color: "#a3e1d4",
+                    highlight: "#1ab394",
+                    label: "App"
+                },
+                {
+                    value: 50,
+                    color: "#dedede",
+                    highlight: "#1ab394",
+                    label: "Software"
+                },
+                {
+                    value: 100,
+                    color: "#A4CEE8",
+                    highlight: "#1ab394",
+                    label: "Laptop"
+                }
+            ];
+
+            var doughnutOptions = {
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                percentageInnerCutout: 45, // This is 0 for Pie charts
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false
+            };
+
+            var ctx = document.getElementById("doughnutChart").getContext("2d");
+            var DoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+
+            var polarData = [
+                {
+                    value: 300,
+                    color: "#a3e1d4",
+                    highlight: "#1ab394",
+                    label: "App"
+                },
+                {
+                    value: 140,
+                    color: "#dedede",
+                    highlight: "#1ab394",
+                    label: "Software"
+                },
+                {
+                    value: 200,
+                    color: "#A4CEE8",
+                    highlight: "#1ab394",
+                    label: "Laptop"
+                }
+            ];
+
+            var polarOptions = {
+                scaleShowLabelBackdrop: true,
+                scaleBackdropColor: "rgba(255,255,255,0.75)",
+                scaleBeginAtZero: true,
+                scaleBackdropPaddingY: 1,
+                scaleBackdropPaddingX: 1,
+                scaleShowLine: true,
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false
+            };
+            var ctx = document.getElementById("polarChart").getContext("2d");
+            var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
+
+        });
+    </script>
 
 @endsection

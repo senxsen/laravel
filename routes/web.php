@@ -21,11 +21,19 @@ Route::post('login', 'User\AuthController@loginPost')->name('login_post');
 Route::get('register', "User\AuthController@register")->name('register');
 Route::post('register', 'User\AuthController@registerPost')->name('register_post');
 Route::get('/dashboard', 'Auth\DashboardController@dashboard')->name('dashboard');
-Route::get('/points','Auth\DashboardController@points')->name('points');
+
 Route::get('/realname','Auth\DashboardController@realname')->name('realname');
 Route::get('/editpassword','Auth\DashboardController@editpassword')->name('editpassword');
 Route::get('/editsecondpassword','Auth\DashboardController@editsecondpassword')->name('editsecondpassword');
 Route::get('/editmemberinfo','Auth\DashboardController@editmemberinfo')->name('editmemberinfo');
+
+
+Route::get('/pointexchange','Auth\DashboardController@pointexchange')->name('pointexchange');
+Route::get('/pointtransfer','Auth\DashboardController@pointtransfer')->name('pointtransfer');
+Route::get('/pointpurchase','Auth\DashboardController@pointpurchase')->name('pointpurchase');
+
+Route::get('/sponsorlist','Auth\DashboardController@sponsorlist')->name('sponsorlist');
+Route::get('/listmap','Auth\DashboardController@listmap')->name('listmap');
 
 //// Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

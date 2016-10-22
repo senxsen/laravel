@@ -22,10 +22,10 @@
             <li class="">
                 <a href="homestead.app/dashboard"><i class="fa fa-edit"></i> <span class="nav-label">{{ trans("master.member_info") }}</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class=""><a href="#">{{ trans("master.edit_member_info") }}</a></li>
-                    <li><a href="#">{{ trans("master.edit_password") }}</a></li>
-                    <li><a href="#">{{ trans("master.edit_second_password") }}</a></li>
-                    <li><a href="#">{{ trans("master.true_auth") }}</a></li>
+                    <li class=""><a href="/editmemberinfo">{{ trans("master.edit_member_info") }}</a></li>
+                    <li><a href="/editpassword">{{ trans("master.edit_password") }}</a></li>
+                    <li><a href="/editsecondpassword">{{ trans("master.edit_second_password") }}</a></li>
+                    <li><a href="/realname">{{ trans("master.real_name") }}</a></li>
                 </ul>
             </li>
 
@@ -33,9 +33,9 @@
             <li class="">
                 <a href="index.html"><i class="fa fa-diamond"></i> <span class="nav-label">{{ trans("master.point_check") }}</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="#">{{ trans("master.points_exchange") }}</a></li>
-                    <li><a href="#">{{ trans("master.points_transfer") }}</a></li>
-                    <li><a href="#">{{ trans("master.points_purchase") }}<span class="label label-primary pull-right">NEW</span></a></li>
+                    <li><a href="/pointexchange">{{ trans("master.points_exchange") }}</a></li>
+                    <li><a href="/pointtransfer">{{ trans("master.points_transfer") }}</a></li>
+                    <li><a href="#">{{ trans("master.points_purchase") }}<span class="label label-primary pull-right">即將開放</span></a></li>
                 </ul>
             </li>
 
@@ -43,9 +43,9 @@
             <li class="">
                 <a href="index.html"><i class="fa fa-sitemap"></i> <span class="nav-label">{{ trans("master.map") }}</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class=""><a href="#">{{ trans("master.sponsors") }}</a></li>
-                    <li><a href="#">{{ trans("master.tree_map") }}</a></li>
-                    <li><a href="#">{{ trans("master.list_map") }}</a></li>
+                    <li class=""><a href="/sponsorlist">{{ trans("master.sponsors") }}</a></li>
+                    {{--<li><a href="#">{{ trans("master.tree_map") }}</a></li>--}}
+                    <li><a href="/listmap">{{ trans("master.list_map") }}</a></li>
                 </ul>
             </li>
 

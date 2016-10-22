@@ -36,6 +36,8 @@ class CreateUsersTable extends Migration
             $table->string('status', 1)->default("Y");    // 會員狀態，Y為激活、N為未激活
 
             $table->timestamps();
+
+            $table->primary('id');
         });
     }
 
