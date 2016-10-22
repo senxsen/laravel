@@ -21,6 +21,7 @@ Route::post('login', 'User\AuthController@loginPost')->name('login_post');
 Route::get('register', "User\AuthController@register")->name('register');
 Route::post('register', 'User\AuthController@registerPost')->name('register_post');
 Route::get('/dashboard', 'Auth\DashboardController@dashboard')->name('dashboard');
+Route::get('/points','Auth\DashboardController@points')->name('points');
 
 //// Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
