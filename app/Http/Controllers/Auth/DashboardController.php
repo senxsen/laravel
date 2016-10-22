@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Bonus;
 use App\Http\Controllers\Controller;
 use App\User;
 use UserAuth;
@@ -23,22 +24,6 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
-
         $binding = [
             'user' => $User,
         ];
@@ -105,21 +90,7 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
+
 
         $binding = [
             'user' => $User,
@@ -132,21 +103,21 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
+//        switch($User->set_point)
+//        {
+//            case 1000:
+//                $User->level = '福龍';
+//                break;
+//            case 3000:
+//                $User->level = '翔龍';
+//                break;
+//            case 5000:
+//                $User->level = '銀龍';
+//                break;
+//            case 10000:
+//                $User->level = '金龍';
+//                break;
+//        }
 
         $binding = [
             'user' => $User,
@@ -159,21 +130,21 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
-        switch($User->set_point)
-        {
-            case 1000:
-                $User->level = '福龍';
-                break;
-            case 3000:
-                $User->level = '翔龍';
-                break;
-            case 5000:
-                $User->level = '銀龍';
-                break;
-            case 10000:
-                $User->level = '金龍';
-                break;
-        }
+//        switch($User->set_point)
+//        {
+//            case 1000:
+//                $User->level = '福龍';
+//                break;
+//            case 3000:
+//                $User->level = '翔龍';
+//                break;
+//            case 5000:
+//                $User->level = '銀龍';
+//                break;
+//            case 10000:
+//                $User->level = '金龍';
+//                break;
+//        }
 
         $binding = [
             'user' => $User,

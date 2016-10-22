@@ -24,6 +24,8 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
+                                        {{--{{ dd($user, $user->id) }}--}}
+                                        {!! $user->id !!}
                                         <p><h3><strong>會員帳號：{{ $user->id }}</strong></h3></p>
                                         <p><h3><strong>註冊時間：{{ $user->created_at->format("Y/m/d") }}</strong></h3></p>
                                         {{--<p><h3><strong>註冊時間：{{ date_format($user->created_at, 'Y/m/d') }}</strong></h3></p>--}}{{--另一種寫法--}}

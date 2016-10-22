@@ -7,5 +7,5 @@
  */
 
 return [
-    'member_info' => 'Member Basic Infomation',
-]
+    'member_info' => 'Member Basic Information',
+];

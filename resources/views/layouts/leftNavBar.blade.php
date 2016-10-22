@@ -6,7 +6,7 @@
                             <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                              </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="homestead.app/dashboard">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $user->full_name }}</strong>    <span class="label label-primary ">{{ trans("master.$user->status") }}</span>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $user->full_name }}</strong>    <span class="label label-primary ">{{ trans("master.".$user->status) }}</span>
                              </span> <span class="text-muted text-xs block">股東or一般會員 <b class="caret"></b></span> </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a href="#">{{ trans("master.member_info") }}</a></li>
