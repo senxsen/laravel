@@ -9,8 +9,39 @@ return [
     //基本資料
     'member_info' => '基本資料',
     'edit_password' => '修改密碼',
+    'edit_second_password' => '修改二級密碼',
+    'old_password' => '原始密碼',
+    'new_password' => '新密碼',
+    'password_confirm' => '確認新密碼',
+    'second_password' => '二級密碼',
     'edit_member_info' => '修改會員資料',
-    'true_auth' => '實名認證',
+    'real_name' => '實名認證',
+
+    //基本資料
+    'eng_last_name' => '姓(英文)',
+    'eng_first_name' => '名(英文',
+    'chinese_name' => '姓名(中文)',
+    'mobile_number' => '手機號碼',
+    'email' => '電子郵件',
+    'passport_id_upload' => '護照/身分證上傳',
+    'passport_no_or_id_no' => '護照號碼/身分證號碼',
+    'country' => '國籍',
+    'birth' => '生日',
+
+    //國家
+    'Taiwan' => '台灣',
+    'China' => '中國',
+    'Hongkong' => '香港',
+    'Philippine' => '菲律賓',
+
+    //Placeholder
+    'plz_passport_ref' => '請參照護照英文',
+    'plz_enter_chname' => '請輸入中文姓名',
+    'plz_passport_no_or_id_no' => '請輸入護照號碼 或 身分證字號',
+    'plz_enter_real_mobile_no' => '請輸入真實手機號碼',
+    'plz_enter_real_email' => '請輸入真實電子信箱',
+    'plz_select' => '請選擇',
+
 
     //點數
     'join_fee' => '投注本金',
@@ -56,5 +87,8 @@ return [
     'login_track' => '登入紀錄',
     'Y' => '激活',
     'N' => '未激活',
+    'member' => '會員',
+    'cancel' => '取消',
+    'save_changes' => '儲存變更',
 //    '' => '',
 ];

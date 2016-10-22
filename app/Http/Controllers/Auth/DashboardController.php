@@ -26,18 +26,21 @@ class DashboardController extends Controller
         switch($User->set_point)
         {
             case 1000:
-                $level = '福龍';
+                $User->level = '福龍';
+                break;
             case 3000:
-                $level = '翔龍';
+                $User->level = '翔龍';
+                break;
             case 5000:
-                $level = '銀龍';
+                $User->level = '銀龍';
+                break;
             case 10000:
-                $level = '金龍';
+                $User->level = '金龍';
+                break;
         }
 
         $binding = [
             'user' => $User,
-            'level' => $level,
         ];
 
         return view('auth.dashboard', $binding);
@@ -51,19 +54,130 @@ class DashboardController extends Controller
         switch($User->set_point)
         {
             case 1000:
-                $level = '福龍';
+                $User->level = '福龍';
+                break;
             case 3000:
-                $level = '翔龍';
+                $User->level = '翔龍';
+                break;
             case 5000:
-                $level = '銀龍';
+                $User->level = '銀龍';
+                break;
             case 10000:
-                $level = '金龍';
+                $User->level = '金龍';
+                break;
         }
 
         $binding = [
             'user' => $User,
-            'level' => $level,
         ];
         return view('auth.points', $binding);
+    }
+
+    public function realname()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        switch($User->set_point)
+        {
+            case 1000:
+                $User->level = '福龍';
+                break;
+            case 3000:
+                $User->level = '翔龍';
+                break;
+            case 5000:
+                $User->level = '銀龍';
+                break;
+            case 10000:
+                $User->level = '金龍';
+                break;
+        }
+
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.realname', $binding);
+    }
+
+    public function editpassword()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        switch($User->set_point)
+        {
+            case 1000:
+                $User->level = '福龍';
+                break;
+            case 3000:
+                $User->level = '翔龍';
+                break;
+            case 5000:
+                $User->level = '銀龍';
+                break;
+            case 10000:
+                $User->level = '金龍';
+                break;
+        }
+
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.editpassword', $binding);
+    }
+
+    public function editsecondpassword()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        switch($User->set_point)
+        {
+            case 1000:
+                $User->level = '福龍';
+                break;
+            case 3000:
+                $User->level = '翔龍';
+                break;
+            case 5000:
+                $User->level = '銀龍';
+                break;
+            case 10000:
+                $User->level = '金龍';
+                break;
+        }
+
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.editsecondpassword', $binding);
+    }
+
+    public function editmemberinfo()
+    {
+        // 撈取幣值的資料
+        $user_id = UserAuth::getUserId();
+        $User = User::where('id', $user_id)->first();
+        switch($User->set_point)
+        {
+            case 1000:
+                $User->level = '福龍';
+                break;
+            case 3000:
+                $User->level = '翔龍';
+                break;
+            case 5000:
+                $User->level = '銀龍';
+                break;
+            case 10000:
+                $User->level = '金龍';
+                break;
+        }
+
+        $binding = [
+            'user' => $User,
+        ];
+        return view('auth.editmemberinfo', $binding);
     }
 }

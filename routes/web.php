@@ -22,6 +22,10 @@ Route::get('register', "User\AuthController@register")->name('register');
 Route::post('register', 'User\AuthController@registerPost')->name('register_post');
 Route::get('/dashboard', 'Auth\DashboardController@dashboard')->name('dashboard');
 Route::get('/points','Auth\DashboardController@points')->name('points');
+Route::get('/realname','Auth\DashboardController@realname')->name('realname');
+Route::get('/editpassword','Auth\DashboardController@editpassword')->name('editpassword');
+Route::get('/editsecondpassword','Auth\DashboardController@editsecondpassword')->name('editsecondpassword');
+Route::get('/editmemberinfo','Auth\DashboardController@editmemberinfo')->name('editmemberinfo');
 
 //// Authentication Routes...
 //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -24,6 +24,7 @@
                 <ul class="nav nav-second-level">
                     <li class=""><a href="#">{{ trans("master.edit_member_info") }}</a></li>
                     <li><a href="#">{{ trans("master.edit_password") }}</a></li>
+                    <li><a href="#">{{ trans("master.edit_second_password") }}</a></li>
                     <li><a href="#">{{ trans("master.true_auth") }}</a></li>
                 </ul>
             </li>

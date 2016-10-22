@@ -27,7 +27,7 @@
                                         <p><h3><strong>會員帳號：{{ $user->id }}</strong></h3></p>
                                         <p><h3><strong>註冊時間：{{ $user->created_at->format("Y/m/d") }}</strong></h3></p>
                                         {{--<p><h3><strong>註冊時間：{{ date_format($user->created_at, 'Y/m/d') }}</strong></h3></p>--}}{{--另一種寫法--}}
-                                        <p><h3><strong>等級：{{ $level }}</strong></h3></p>
+                                        <p><h3><strong>等級：{{ $user->level }}</strong></h3></p>
                                         <p><h3><strong>球數：XX </strong></h3></p>
                                         {{--<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message--}}
                                         {{--</button>--}}
