@@ -6,7 +6,20 @@
 @endsection
 
 @section('content')
-    <div class="row  border-bottom white-bg dashboard-header">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-9">
+            <h2>{{ trans("master.edit_member_info") }}</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">
+                    <strong>{{ trans("master.edit_member_info") }}</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="border-bottom wrapper wrapper-content">
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
