@@ -9,7 +9,9 @@
     <div class="row  border-bottom white-bg dashboard-header">
 
         {{--會員基本資料顯示 + 各點數狀況--}}
+
         @include('layouts.memberinfo')
+
 
         {{--多球狀況一覽--}}
         <div class="row">
@@ -208,7 +210,7 @@
 
             }, 1300);
 
-
+            /**
             var data1 = [
                 [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
             ];
@@ -326,7 +328,7 @@
             };
             var ctx = document.getElementById("polarChart").getContext("2d");
             var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
-
+            **/
         });
     </script>
 

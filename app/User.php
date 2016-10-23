@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
     // php artisan make:model User
     use Notifiable;
-
+    public $incrementing = false;
     //protected $table = 'users';
     protected $primaryKey = 'id';
 
