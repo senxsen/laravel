@@ -20,15 +20,15 @@
                                         <h2>{{ $user->nickname }}</h2>
 
                                         <div class="m-b-sm">
-                                            <img alt="image" class="img-circle" src="img/a2.jpg" style="width: 62px">
+                                            <img alt="image" class="img-circle" src="/img/a2.jpg" style="width: 62px">
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        <p><h3><strong>會員帳號：{{ $user->id }}</strong></h3></p>
-                                        <p><h3><strong>註冊時間：{{ $user->created_at->format("Y/m/d") }}</strong></h3></p>
-                                        {{--<p><h3><strong>註冊時間：{{ date_format($user->created_at, 'Y/m/d') }}</strong></h3></p>--}}{{--另一種寫法--}}
-                                        <p><h3><strong>等級：{{ $user->level }}</strong></h3></p>
-                                        <p><h3><strong>球數：XX </strong></h3></p>
+                                        <h3><strong>會員帳號：{{ $user->id }}</strong></h3>
+                                        <h3><strong>註冊時間：{{ $user->created_at->format("Y/m/d") }}</strong></h3>
+                                        {{--<h3><strong>註冊時間：{{ date_format($user->created_at, 'Y/m/d') }}</strong></h3>--}}{{--另一種寫法--}}
+                                        <h3><strong>等級：{{ $user->level }}</strong></h3>
+                                        <h3><strong>球數：XX </strong></h3>
                                         {{--<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message--}}
                                         {{--</button>--}}
                                     </div>
@@ -336,7 +336,7 @@
 
             }, 1300);
 
-
+            /**
             var data1 = [
                 [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
             ];
@@ -454,7 +454,7 @@
             };
             var ctx = document.getElementById("polarChart").getContext("2d");
             var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
-
+            **/
         });
     </script>
 
