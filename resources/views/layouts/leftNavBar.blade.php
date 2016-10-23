@@ -5,9 +5,9 @@
                 <div class="dropdown profile-element"> <span>
                             <img alt="image" class="img-circle" src="img/profile_small.jpg" />
                              </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="homestead.app/dashboard">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="/dashboard">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $user->full_name }}</strong>    <span class="label label-primary ">{{ trans("master.".$user->status) }}</span>
-                             </span> <span class="text-muted text-xs block">股東or一般會員 <b class="caret"></b></span> </span> </a>
+                             </span> <span class="text-muted text-xs block">{{ trans("master.".$user->type) }}<b class="caret"></b></span> </span> </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a href="#">{{ trans("master.member_info") }}</a></li>
                         <li><a href="#">{{ trans("master.contact_service") }}</a></li>
@@ -20,7 +20,7 @@
             </li>
             {{--//基本資料--}}
             <li class="">
-                <a href="homestead.app/dashboard"><i class="fa fa-edit"></i> <span class="nav-label">{{ trans("master.member_info") }}</span> <span class="fa arrow"></span></a>
+                <a href="/dashboard"><i class="fa fa-edit"></i> <span class="nav-label">{{ trans("master.member_info") }}</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class=""><a href="/editmemberinfo">{{ trans("master.edit_member_info") }}</a></li>
                     <li><a href="/editpassword">{{ trans("master.edit_password") }}</a></li>

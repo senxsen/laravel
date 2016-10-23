@@ -65,4 +65,15 @@ class User extends Authenticatable
         }
         return $level;
     }
+
+    /**
+     * @return array
+     */
+    public function getTypeAttribute()
+    {
+        if($this->created_at > '2016-08-01')
+            $type = 'B';
+        else $type = 'A';
+        return $type;
+    }
 }

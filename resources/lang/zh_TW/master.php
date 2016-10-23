@@ -99,7 +99,8 @@ return [
     'level3' => '翔龍',
     'level2' => '銀龍',
     'level1' => '金龍',
-
+    'A' => '股東會員',
+    'B' => '一般會員',
 
     //獎勵
     'sponsor_point' => '直推點數',
@@ -123,6 +124,7 @@ return [
     'login_track' => '登入紀錄',
     'Y' => '激活',
     'N' => '未激活',
+    'set_point' => '本金',
     'member' => '會員',
     'cancel' => '取消',
     'save_changes' => '儲存變更',

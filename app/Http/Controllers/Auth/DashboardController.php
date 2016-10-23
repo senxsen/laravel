@@ -24,6 +24,10 @@ class DashboardController extends Controller
         // 撈取幣值的資料
         $user_id = UserAuth::getUserId();
         $User = User::where('id', $user_id)->first();
+        //已加到User.php Model裡頭
+//        if($User->created_at > '2016-08-01')
+//            $User->type = 'B';
+//        else $User->type = 'A';
         $binding = [
             'user' => $User,
         ];
