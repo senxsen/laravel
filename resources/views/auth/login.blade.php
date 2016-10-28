@@ -32,8 +32,9 @@
 @section("js")
     <script>
         var ImageUrl = [
-            "http://www.timesmarketing.tw/data/afficheimg/1462958213922967180.jpg",
-            "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0N70S7S.jpg?v=1.1",
+            "https://s.yimg.com/uy/build/images/sohp/inspiration/night-sky3.jpg",
+            "https://s.yimg.com/uy/build/images/sohp/inspiration/love-rock3.jpg",
+            "https://s.yimg.com/uy/build/images/sohp/inspiration/solar-storm3.jpg",
         ];
         var ArrayCount = 0;
         var $loginBg = $(".login-bg");
@@ -41,23 +42,26 @@
             changeImage
         ,7000);
         function changeImage(){
-//            for(ArrayCount; ArrayCount < ImageUrl.length; ArrayCount++){
-                $.when(
-                    $loginBg.animate({
-                        opacity: 0
-                    }, 1000)
-                ).then(
+            $.when(
+                $loginBg.animate({
+                    opacity: 0
+                }, 1000, function () {
+                    console.log("done")
+                })
+            ).then(
+                function(){
+                    console.log("test", ArrayCount);
                     $loginBg.attr("src", ImageUrl[ArrayCount]).animate({
                         opacity: 1
-                    }, 1000)
-                );
-                if(ArrayCount == ImageUrl.length-1){
-                    ArrayCount = 0;
-                }else{
-                    ArrayCount++;
+                    }, 1000);
+                    if(ArrayCount == ImageUrl.length-1){
+                        ArrayCount = 0;
+                    }else{
+                        ArrayCount++;
+                    }
                 }
-//            }
-        };
+            );
+        }
     </script>
 @endsection
 

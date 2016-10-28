@@ -26,8 +26,7 @@
 
 <body class="gray-bg">
 @if($routeName == 'login')
-    <img class="login-bg" src="https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0N70S7S.jpg?v=1.1" />
-
+    <img class="login-bg" src="https://s.yimg.com/uy/build/images/sohp/inspiration/solar-storm3.jpg" />
 @endif
 <div class="middle-box text-center loginscreen animated fadeInDown">
     @yield('content')
