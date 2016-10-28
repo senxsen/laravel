@@ -32,8 +32,9 @@
 @section("js")
     <script>
         var ImageUrl = [
-            "http://www.timesmarketing.tw/data/afficheimg/1462958213922967180.jpg",
-            "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0N70S7S.jpg?v=1.1",
+            "http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/024C1EC2-79CF-453C-843F-B47CB6018BC7.JPG",
+            "http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/%E6%B0%B4%E7%89%9B%E5%B3%B6%E9%A2%A8%E5%85%89_9634.jpg",
+            "http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/1427181691334.jpg",
         ];
         var ArrayCount = 0;
         var $loginBg = $(".login-bg");

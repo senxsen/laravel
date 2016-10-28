@@ -26,7 +26,7 @@
 
 <body class="gray-bg">
 @if($routeName == 'login')
-    <img class="login-bg" src="https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0N70S7S.jpg?v=1.1" />
+    <img class="login-bg" src="http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/%E6%B0%B4%E7%89%9B%E5%B3%B6%E9%A2%A8%E5%85%89_9447.jpg" />
 
 @endif
 <div class="middle-box text-center loginscreen animated fadeInDown">
