@@ -26,8 +26,12 @@
 
 <body class="gray-bg">
 @if($routeName == 'login')
-    <img class="login-bg" src="http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/%E6%B0%B4%E7%89%9B%E5%B3%B6%E9%A2%A8%E5%85%89_9447.jpg" />
+<<<<<<< HEAD
+    {{--<img class="login-bg" src="http://www.doubledragon-inc.com/GetImageBySize.aspx?w=700&&h=500&&f=images/gallery/%E6%B0%B4%E7%89%9B%E5%B3%B6%E9%A2%A8%E5%85%89_9447.jpg" />--}}
 
+=======
+    <img class="login-bg" src="https://s.yimg.com/uy/build/images/sohp/inspiration/solar-storm3.jpg" />
+>>>>>>> 1009b8c7184a0e849a75aadc6ce8488754ab22a7
 @endif
 <div class="middle-box text-center loginscreen animated fadeInDown">
     @yield('content')
