@@ -14,6 +14,8 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        DB::enableQueryLog();  // 用 DB::getQueryLog() 取 SQL
+        if(config('app.debug')){
+            DB::enableQueryLog();  // 用 DB::getQueryLog() 取 SQL
+        }
     }
 }

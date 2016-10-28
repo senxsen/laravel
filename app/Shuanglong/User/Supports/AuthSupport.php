@@ -2,6 +2,7 @@
 
 namespace App\Shuanglong\User\Supports;
 
+use App\User;
 use Session;
 
 class AuthSupport
@@ -38,5 +39,10 @@ class AuthSupport
     public static function login($user_id)
     {
         return Session::put('user_id', $user_id);
+    }
+
+    public static function findUser()
+    {
+        return User::find(static::getUserId());
     }
 }

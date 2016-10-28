@@ -1,16 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: senxsen
- * Date: 2016/10/4
- * Time: 17:56
- */
 
 namespace App\Http\Controllers\Auth;
 
 use App\Bonus;
 use App\Http\Controllers\Controller;
 use App\User;
+use DB;
 use UserAuth;
 
 class DashboardController extends Controller
@@ -22,14 +17,15 @@ class DashboardController extends Controller
     public function dashboard()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
+
+
+//        dd(DB::getQueryLog()); //check sql way
         //已加到User.php Model裡頭
 //        if($User->created_at > '2016-08-01')
 //            $User->type = 'B';
 //        else $User->type = 'A';
         $binding = [
-            'user' => $User,
+
         ];
 
         return view('auth.dashboard', $binding);
@@ -38,10 +34,7 @@ class DashboardController extends Controller
     public function realname()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.realname', $binding);
     }
@@ -49,10 +42,7 @@ class DashboardController extends Controller
     public function editpassword()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.editpassword', $binding);
     }
@@ -60,10 +50,7 @@ class DashboardController extends Controller
     public function editsecondpassword()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.editsecondpassword', $binding);
     }
@@ -71,10 +58,7 @@ class DashboardController extends Controller
     public function editmemberinfo()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.editmemberinfo', $binding);
     }
@@ -82,10 +66,7 @@ class DashboardController extends Controller
     public function pointexchange()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.pointexchange', $binding);
     }
@@ -93,10 +74,7 @@ class DashboardController extends Controller
     public function pointtransfer()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.pointtransfer', $binding);
     }
@@ -104,10 +82,7 @@ class DashboardController extends Controller
     public function pointpurchase()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.pointpurchase', $binding);
     }
@@ -115,10 +90,7 @@ class DashboardController extends Controller
     public function sponsorlist()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.sponsorlist', $binding);
     }
@@ -126,10 +98,7 @@ class DashboardController extends Controller
     public function listmap()
     {
         // 撈取幣值的資料
-        $user_id = UserAuth::getUserId();
-        $User = User::where('id', $user_id)->first();
         $binding = [
-            'user' => $User,
         ];
         return view('auth.listmap', $binding);
     }

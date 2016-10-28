@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Shuanglong\Core\Supports\RandomStringSupports;
+use Carbon\Carbon;
 use Illuminate\Support\MessageBag;
 use UserAuth;
 use App\User;
@@ -51,6 +52,12 @@ class AuthController extends Controller
             }
             // 登入
             UserAuth::login($User->id);
+
+//            $Ip = new Ip();
+//            $Ip->user_id = $User->id;
+//            $Ip->login_ip = $request->ip();
+//            $Ip->login_time = Carbon::now();
+//            $Ip->save();
             // 註冊後進入到會員首頁
             return redirect()->route('dashboard');
 

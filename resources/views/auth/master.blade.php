@@ -25,7 +25,10 @@
 </head>
 
 <body class="gray-bg">
+@if($routeName == 'login')
+    <img class="login-bg" src="https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0N70S7S.jpg?v=1.1" />
 
+@endif
 <div class="middle-box text-center loginscreen animated fadeInDown">
     @yield('content')
 </div>
@@ -33,7 +36,7 @@
 <!-- Mainly scripts -->
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+@yield("js")
 
 </body>
 

@@ -80,7 +80,7 @@
     <script>
         $(document).ready(function(){
 
-            var $image = $(".image-crop > img")
+            var $image = $(".image-crop > img");
             $($image).cropper({
                 aspectRatio: 1.618,
                 preview: ".img-preview",
@@ -264,7 +264,8 @@
             '.chosen-select-no-single' : {disable_search_threshold:10},
             '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
             '.chosen-select-width'     : {width:"95%"}
-        }
+        };
+
         for (var selector in config) {
             $(selector).chosen(config[selector]);
         }
@@ -321,16 +322,16 @@
 
         $(".dial").knob();
 
-        $("#basic_slider").noUiSlider({
-            start: 40,
-            behaviour: 'tap',
-            connect: 'upper',
-            range: {
-                'min':  20,
-                'max':  80
-            }
-        });
-
+//        $("#basic_slider").noUiSlider({
+//            start: 40,
+//            behaviour: 'tap',
+//            connect: 'upper',
+//            range: {
+//                'min':  20,
+//                'max':  80
+//            }
+//        });
+        try{
         $("#range_slider").noUiSlider({
             start: [ 40, 60 ],
             behaviour: 'drag',
@@ -350,7 +351,9 @@
                 'max':  80
             }
         });
-
+        }catch(err){
+            console.log(err);
+        }
 
     </script>
 @endsection
