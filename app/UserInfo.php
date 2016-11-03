@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User_info extends Model
+class UserInfo extends Model
 {
     //use Notifiable;
     public $incrementing = false;
-    //protected $table = 'users';
-    protected $primaryKey = 'id';
+//    protected $table = 'user_infos';
+    protected $primaryKey = 'user_id';
 
     protected $fillable = [
         'user_id',

@@ -19,8 +19,6 @@ class CreateIpsTable extends Migration
             $table->string('user_id', 20);
             $table->ipAddress('login_ip');
             $table->timestamp('login_time')->nullable();
-
-            $table->timestamp('created_at')->nullable();
         });
     }
 

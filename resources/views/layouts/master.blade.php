@@ -8,45 +8,45 @@
 
     <title>{{ trans("master.double_dragon") }}|{{ trans("master.system") }}</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
 
-    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
 
-    <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/css/plugins/chosen/chosen.css" rel="stylesheet">
 
-    <link href="css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="/css/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet">
 
-    <link href="css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="/css/plugins/cropper/cropper.min.css" rel="stylesheet">
 
-    <link href="css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/css/plugins/switchery/switchery.css" rel="stylesheet">
 
-    <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
 
-    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 
-    <link href="css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
-    <link href="css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
 
-    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
-    <link href="css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+    <link href="/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
 
-    <link href="css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
 
-    <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="/css/plugins/select2/select2.min.css" rel="stylesheet">
 
     @yield("css")
 
@@ -547,43 +547,43 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- Flot -->
-<script src="js/plugins/flot/jquery.flot.js"></script>
-<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="js/plugins/flot/jquery.flot.spline.js"></script>
-<script src="js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="/js/plugins/flot/jquery.flot.js"></script>
+<script src="/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="/js/plugins/flot/jquery.flot.spline.js"></script>
+<script src="/js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="/js/plugins/flot/jquery.flot.pie.js"></script>
 
 <!-- Peity -->
-<script src="js/plugins/peity/jquery.peity.min.js"></script>
-<script src="js/demo/peity-demo.js"></script>
+<script src="/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="/js/demo/peity-demo.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
+<script src="/js/inspinia.js"></script>
+<script src="/js/plugins/pace/pace.min.js"></script>
 
 <!-- jQuery UI -->
-<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
 <!-- GITTER -->
-<script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+<script src="/js/plugins/gritter/jquery.gritter.min.js"></script>
 
 <!-- Sparkline -->
-<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
 <!-- Sparkline demo data  -->
-<script src="js/demo/sparkline-demo.js"></script>
+<script src="/js/demo/sparkline-demo.js"></script>
 
 <!-- ChartJS-->
-<script src="js/plugins/chartJs/Chart.min.js"></script>
+<script src="/js/plugins/chartJs/Chart.min.js"></script>
 
 <!-- Toastr -->
-<script src="js/plugins/toastr/toastr.min.js"></script>
+<script src="/js/plugins/toastr/toastr.min.js"></script>
 
 <!-- Custom and plugin javascript -->
 {{--<script src="js/inspinia.js"></script>--}}
@@ -591,49 +591,49 @@
 {{--<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>--}}
 
 <!-- Chosen -->
-<script src="js/plugins/chosen/chosen.jquery.js"></script>
+<script src="/js/plugins/chosen/chosen.jquery.js"></script>
 
 <!-- JSKnob -->
-<script src="js/plugins/jsKnob/jquery.knob.js"></script>
+<script src="/js/plugins/jsKnob/jquery.knob.js"></script>
 
 <!-- Input Mask-->
-<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+<script src="/js/plugins/jasny/jasny-bootstrap.min.js"></script>
 
 <!-- Data picker -->
-<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 
 <!-- NouSlider -->
-<script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
+<script src="/js/plugins/nouslider/jquery.nouislider.min.js"></script>
 
 <!-- Switchery -->
-<script src="js/plugins/switchery/switchery.js"></script>
+<script src="/js/plugins/switchery/switchery.js"></script>
 
 <!-- IonRangeSlider -->
-<script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+<script src="/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
 
 <!-- iCheck -->
-<script src="js/plugins/iCheck/icheck.min.js"></script>
+<script src="/js/plugins/iCheck/icheck.min.js"></script>
 
 <!-- MENU -->
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
 <!-- Color picker -->
-<script src="js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<script src="/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
 
 <!-- Clock picker -->
-<script src="js/plugins/clockpicker/clockpicker.js"></script>
+<script src="/js/plugins/clockpicker/clockpicker.js"></script>
 
 <!-- Image cropper -->
-<script src="js/plugins/cropper/cropper.min.js"></script>
+<script src="/js/plugins/cropper/cropper.min.js"></script>
 
 <!-- Date range use moment.js same as full calendar plugin -->
-<script src="js/plugins/fullcalendar/moment.min.js"></script>
+<script src="/js/plugins/fullcalendar/moment.min.js"></script>
 
 <!-- Date range picker -->
-<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/js/plugins/daterangepicker/daterangepicker.js"></script>
 
 <!-- Select2 -->
-<script src="js/plugins/select2/select2.full.min.js"></script>
+<script src="/js/plugins/select2/select2.full.min.js"></script>
 
 
 @yield("js")

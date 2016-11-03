@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categorie extends Model
+class Category extends Model
 {
     //
-    use Notifiable;
     public $incrementing = false;
-    //protected $table = 'users';
+    protected $table = 'categories';
     protected $primaryKey = 'id';
 
     protected $fillable = [

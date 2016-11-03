@@ -16,7 +16,7 @@ class CreateUserInfosTable extends Migration
         Schema::create('user_infos', function (Blueprint $table) {
             $table->string('user_id', 20);
 
-            $table->timestamp('registered_at');
+            $table->timestamp('registered_at')->nullable();
 
             $table->ipAddress('login_ip');
             $table->timestamp('login_time')->nullable();
@@ -24,6 +24,8 @@ class CreateUserInfosTable extends Migration
             $table->timestamp('last_login_time')->nullable();
 
             $table->timestamps();
+
+            $table->primary('user_id');
 
         });
     }

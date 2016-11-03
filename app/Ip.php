@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ip extends Model
 {
     //
-    use Notifiable;
     public $incrementing = false;
     //protected $table = 'users';
     protected $primaryKey = 'id';
@@ -17,6 +16,7 @@ class Ip extends Model
         'user_id',
         'login_ip',
         'login_time',
-        'created_at',
     ];
+    public $timestamps = false;
+    protected $dates = ['login_time'];
 }

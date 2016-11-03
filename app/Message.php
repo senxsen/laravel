@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     //
-    use Notifiable;
     public $incrementing = false;
     //protected $table = 'users';
     protected $primaryKey = 'id';

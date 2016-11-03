@@ -4,7 +4,9 @@ namespace App\Http\Controllers\User;
 
 
 use App\Http\Controllers\Controller;
+use App\Ip;
 use App\Shuanglong\Core\Supports\RandomStringSupports;
+use App\UserInfo;
 use Carbon\Carbon;
 use Illuminate\Support\MessageBag;
 use UserAuth;
@@ -32,6 +34,7 @@ class AuthController extends Controller
     public function loginPost(Request $request)
     {
         try {
+//            $request->all();
             // 撈取使用者
             $User = User::where('email', $request->email)->first();
 
@@ -52,12 +55,37 @@ class AuthController extends Controller
             }
             // 登入
             UserAuth::login($User->id);
+            // ip 紀錄
+            $Ip = new Ip();
+            $Ip->user_id = $User->id;
+            $Ip->login_ip = $request->ip();
+            $Ip->login_time = Carbon::now();
+            $Ip->save();
+            //
+            if(is_null($UserInfo = UserInfo::find($User->id))){
+               throw new Exception(
+                   'Cant find User Info by User id:'. $User->id,
+                   100010001
+               );
+            }
+            // Update
+            $UserInfo->update([
+                'last_login_ip' => $UserInfo->login_ip,
+                'last_login_time' => $UserInfo->login_time,
+                'login_ip' => $request->ip(),
+                'login_time' => Carbon::now(),
+            ]);
+//            $array = [];
+//            if(!is_null($UserInfo->login_ip)){
+//                $array = array_add($array, 'last_login_ip', $UserInfo->login_ip);
+//            }
+//            if(!is_null($UserInfo->login_time)){
+//                $array = array_add($array, 'last_login_time', $UserInfo->login_time);
+//            }
+//            $array = array_add($array, 'login_ip', $request->ip());
+//            $array = array_add($array, 'login_time', Carbon::now());
+//            $UserInfo->update($array);
 
-//            $Ip = new Ip();
-//            $Ip->user_id = $User->id;
-//            $Ip->login_ip = $request->ip();
-//            $Ip->login_time = Carbon::now();
-//            $Ip->save();
             // 註冊後進入到會員首頁
             return redirect()->route('dashboard');
 
@@ -120,6 +148,11 @@ class AuthController extends Controller
             $User->password     = Hash::make($inputs['password']);
             $User->save();
             // TODO: 因為 id 欄位有 Unique 所以不能有重複的，但因為目前沒有判斷是否重複，就直接寫入，雖然碰撞率很低，但還是有可能發生。目前如果出錯的話，他會跳到 Exception 去。
+
+            $UserInfo = new UserInfo();
+            $UserInfo->user_id = $User->id;
+            $UserInfo->registered_at = Carbon::now();
+            $UserInfo->save();
 
             // 註冊完成都沒問題就直接登入
 
